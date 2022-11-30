@@ -17,6 +17,9 @@ jobs:
         with:
           fetch-depth: 0
           submodules: true
+      - name: Checkout GeoServer version
+        run: |
+          make geoserver_version_checkout SERVICE_NAME=${{ inputs.service_name }}
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
@@ -26,7 +29,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.m2
-          key: setup-cache-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}-${{ hashFiles('services/${{ input.service_name }}/config.env' ) }}
+          key: setup-cache-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
       - name: Make service image
         run: |
           java --version

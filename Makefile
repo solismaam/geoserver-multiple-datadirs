@@ -10,7 +10,7 @@ GEOSERVER_DIR = "$(CURDIR)/geoserver.git"
 USER_GID = $(shell id -g)
 USER_UID = $(shell id -u)
 
-build: geoserver_init geoserver_version_checkout build_geoserver build_tomcat geoserver_reset
+build: geoserver_version_checkout build_geoserver build_tomcat geoserver_reset
 
 build_geoserver:
 	@mvn \
@@ -34,7 +34,7 @@ build_tomcat:
 geoserver_init geoserver_reset:
 	@git submodule update --init --remote
 
-geoserver_version_checkout: geoserver_init
+geoserver_version_checkout:
 	@git submodule foreach '[ "${PATH}" = "$(GEOSERVER_DIR)" ] || git checkout $(GEOSERVER_VERSION)'
 
 mvn_cache_reset:
