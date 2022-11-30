@@ -19,4 +19,5 @@ jobs:
           printenv | sort
           java --version
           mvn --version
+          mvn help:evaluate -Dexpression=settings.localRepository -q -DforceStdout
           # make build SERVICE_NAME=${{ inputs.service_name }}
