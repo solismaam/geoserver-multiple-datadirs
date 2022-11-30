@@ -17,15 +17,16 @@ jobs:
         with:
           fetch-depth: 0
           submodules: true
-      - name: Checkout GeoServer version
-        run: |
-          make geoserver_init SERVICE_NAME=${{ inputs.service_name }}
-      - name: Set up Java
+      - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          cache: maven
           distribution: temurin
           java-version: 11
+      - name: Setup cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: setup-cache-${{ runner.os }}-${{ hashFiles('**/pom.xml')-${{ hashFiles('services/${{ input.service_name }}/config.env' )}}
       - name: Make service image
         run: |
           java --version
