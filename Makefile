@@ -14,6 +14,7 @@ build: geoserver_init geoserver_version_checkout build_geoserver build_tomcat ge
 
 build_geoserver:
 	@mvn \
+		--batch-mode \
 		--file $(GEOSERVER_DIR)/src/pom.xml \
 		-DconfigDirectory=$(CURDIR)/services/$(SERVICE_NAME)/data \
 		-DconfigId=$(GEOSERVER_CONFIG_ID) \
@@ -38,6 +39,6 @@ geoserver_version_checkout: geoserver_init
 
 mvn_cache_reset:
 	@rm -rf ${HOME}/.m2/repository
-	
+
 push_ecr:
 	@echo docker-compose push $(SERVICE_NAME)
