@@ -1,0 +1,19 @@
+name: GHCR Build Service Workflow
+
+on:
+  workflow_call:
+    inputs:
+      service_name:
+        description: Service name
+        required: true
+        type: string
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.1.0
+      - name: Make service image
+        run: |
+          make build SERVICE_NAME=${{ inputs.service_name }}

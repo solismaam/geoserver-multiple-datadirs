@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Makefile
+      - services/geoserver1
+      - tomcat
+  pull_request:
+    branches:
+      - main
+    paths:
+      - Makefile
+      - services/geoserver1
+      - tomcat
+
+jobs:
+  Release:
+    uses: ./.github/workflows/ghcr_build_service.yml
+    with:
+      name: geoserver1
