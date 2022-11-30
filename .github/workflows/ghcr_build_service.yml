@@ -17,7 +17,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          cache: true
+          cache: maven
           distribution: oracle
           java-version: 11
       - name: Make service image
