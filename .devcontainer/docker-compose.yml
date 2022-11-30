@@ -11,7 +11,7 @@ services:
         soft: 10240
         hard: 10240
     volumes:
-      - var-lib-dind:/var/lib/dind
+      - mvn-cache:/home/vscode/.m2
       - ..:/workspace
 volumes:
-  var-lib-dind:
+  mvn-cache:
