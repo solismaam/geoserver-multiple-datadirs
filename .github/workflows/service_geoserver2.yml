@@ -1,10 +1,12 @@
-name: Service Geoserver2 Workflow
+name: Service geoserver2 Workflow
 
 on:
   push:
     branches:
       - main
     paths:
+      - .github/workflows/ghcr_build_service.yml
+      - .github/workflows/service_geoserver2.yml
       - Makefile
       - services/geoserver2
       - tomcat
@@ -12,6 +14,8 @@ on:
     branches:
       - main
     paths:
+      - .github/workflows/ghcr_build_service.yml
+      - .github/workflows/service_geoserver2.yml
       - Makefile
       - services/geoserver2
       - tomcat
