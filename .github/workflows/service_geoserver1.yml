@@ -1,3 +1,5 @@
+name: Service Geoserver1 Workflow
+
 on:
   push:
     branches:
