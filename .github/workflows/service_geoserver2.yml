@@ -18,4 +18,4 @@ jobs:
   Release:
     uses: ./.github/workflows/ghcr_build_service.yml
     with:
-      name: geoserver2
+      service_name: geoserver2
