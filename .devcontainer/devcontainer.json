@@ -1,0 +1,60 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+	"name": "Geoserver",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "devcontainer",
+	"workspaceFolder": "/workspace",
+	"overrideCommand": true,
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"aws.samcli.enableCodeLenses": false,
+				"aws.telemetry": false,
+				"dev.containers.copyGitConfig": true,
+				"terminal.integrated.defaultProfile.linux": "bash"
+			},
+			"extensions": [
+				"redhat.vscode-yaml"
+			]
+		}
+	},
+	"features": {
+		// https://github.com/devcontainers/features/tree/main/src/github-cli
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"version": "latest"
+		},
+		// https://github.com/devcontainers/features/tree/main/src/aws-cli
+		"ghcr.io/devcontainers/features/aws-cli:1": {
+			"version": "latest"
+		},
+		// https://github.com/devcontainers/features/tree/main/src/common-utils
+		"ghcr.io/devcontainers/features/common-utils:1": {
+			"version": "latest"
+		},
+		// https://github.com/devcontainers/features/tree/main/src/docker-in-docker
+		"ghcr.io/devcontainers/features/docker-in-docker:1": {
+			"version": "latest"
+		},
+		// https://github.com/devcontainers/features/tree/main/src/java
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "11",
+			"jdkDistro": "open",
+			"installMaven": true
+		},
+		// https://github.com/devcontainers/features/tree/main/src/node
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "latest"
+		}
+	},
+	"remoteUser": "vscode",
+	"portsAttributes": {
+		"8080-9080": {
+			"elevateIfNeeded": false,
+			"label": "Tomcat",
+			"onAutoForward": "silent",
+			"requireLocalPort": true
+		}
+	}
+}

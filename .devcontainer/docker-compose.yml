@@ -1,0 +1,17 @@
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    security_opt:
+      - "label:disable"
+    ulimits:
+      nofile:
+        soft: 10240
+        hard: 10240
+    volumes:
+      - var-lib-dind:/var/lib/dind
+      - ..:/workspace
+volumes:
+  var-lib-dind:
