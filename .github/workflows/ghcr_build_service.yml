@@ -16,4 +16,7 @@ jobs:
         uses: actions/checkout@v3.1.0
       - name: Make service image
         run: |
-          make build SERVICE_NAME=${{ inputs.service_name }}
+          printenv | sort
+          java --version
+          mvn --version
+          # make build SERVICE_NAME=${{ inputs.service_name }}

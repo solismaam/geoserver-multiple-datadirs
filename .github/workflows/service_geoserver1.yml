@@ -5,6 +5,8 @@ on:
     branches:
       - main
     paths:
+      - .github/workflows/ghcr_build_service.yml
+      - .github/workflows/service_geoserver1.yml
       - Makefile
       - services/geoserver1
       - tomcat
@@ -12,6 +14,8 @@ on:
     branches:
       - main
     paths:
+      - .github/workflows/ghcr_build_service.yml
+      - .github/workflows/service_geoserver1.yml
       - Makefile
       - services/geoserver1
       - tomcat
