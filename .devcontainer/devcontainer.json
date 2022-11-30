@@ -40,7 +40,7 @@
 		// https://github.com/devcontainers/features/tree/main/src/java
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "11",
-			"jdkDistro": "open",
+			"jdkDistro": "tem",
 			"installMaven": true
 		},
 		// https://github.com/devcontainers/features/tree/main/src/node

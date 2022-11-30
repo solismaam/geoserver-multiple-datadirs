@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           cache: maven
-          distribution: oracle
+          distribution: temurin
           java-version: 11
       - name: Make service image
         run: |
