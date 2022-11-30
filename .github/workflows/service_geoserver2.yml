@@ -15,6 +15,7 @@ on:
       - Makefile
       - services/geoserver2
       - tomcat
+  workflow_dispatch:
 
 jobs:
   Release:
