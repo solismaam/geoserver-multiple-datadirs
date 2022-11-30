@@ -17,6 +17,9 @@ jobs:
         with:
           fetch-depth: 0
           submodules: true
+      - name: Checkout GeoServer version
+        run: |
+          make geoserver_init SERVICE_NAME=${{ inputs.service_name }}
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
