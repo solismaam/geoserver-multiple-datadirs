@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  geoserver1:
+    build:
+      context: .
+      dockerfile: tomcat/Dockerfile
+    image: ${ECR_GEOSERVER_IMAGE:-tornanext-geoserver1}:${ECR_GEOSERVER_TAG:-latest}
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./services/geoserver1/data/release:/usr/local/tomcat/webapps/geoserver/data
+  geoserver2:
+    build:
+      context: .
+      dockerfile: tomcat/Dockerfile
+    image: tornanext-geoserver2:latest
+    ports:
+      - "8082:8080"
+    volumes:
+      - ./services/geoserver2/data/release:/usr/local/tomcat/webapps/geoserver/data
