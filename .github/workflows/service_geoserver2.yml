@@ -8,8 +8,8 @@ on:
       - .github/workflows/ghcr_build_service.yml
       - .github/workflows/service_geoserver2.yml
       - Makefile
-      - services/geoserver2
-      - tomcat
+      - services/geoserver2/**
+      - tomcat/**
   pull_request:
     branches:
       - main
@@ -17,8 +17,8 @@ on:
       - .github/workflows/ghcr_build_service.yml
       - .github/workflows/service_geoserver2.yml
       - Makefile
-      - services/geoserver2
-      - tomcat
+      - services/geoserver2/**
+      - tomcat/**
   workflow_dispatch:
 
 jobs:
