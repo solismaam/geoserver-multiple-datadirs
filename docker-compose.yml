@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: tomcat/Dockerfile
-    image: ${ECR_GEOSERVER_IMAGE:-tornanext-geoserver1}:${ECR_GEOSERVER_TAG:-latest}
+    image: localhost/tornanext-geoserver1:${DOCKER_REPOSITORY_IMAGE_TAG:-latest}
     ports:
       - "8081:8080"
     volumes:
@@ -13,7 +13,7 @@ services:
     build:
       context: .
       dockerfile: tomcat/Dockerfile
-    image: tornanext-geoserver2:latest
+    image: localhost/tornanext-geoserver2:${DOCKER_REPOSITORY_IMAGE_TAG:-latest}
     ports:
       - "8082:8080"
     volumes:
