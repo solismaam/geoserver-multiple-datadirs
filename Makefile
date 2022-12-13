@@ -31,8 +31,11 @@ build_tomcat:
 		--build-arg USER_UID=$(USER_UID) \
 		$(SERVICE_NAME)
 
-geoserver_init geoserver_reset:
+geoserver_init:
 	@git submodule update --init --remote
+
+geoserver_reset:
+	@git submodule update --init
 
 geoserver_version_checkout:
 	@git submodule foreach '[ "${PATH}" = "$(GEOSERVER_DIR)" ] || git checkout $(GEOSERVER_VERSION)'
