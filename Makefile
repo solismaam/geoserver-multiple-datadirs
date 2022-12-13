@@ -10,7 +10,7 @@ GEOSERVER_DIR = "$(CURDIR)/geoserver.git"
 USER_GID = $(shell id -g)
 USER_UID = $(shell id -u)
 
-build: geoserver_version_checkout build_geoserver build_tomcat geoserver_reset
+build: geoserver_init geoserver_version_checkout build_geoserver build_tomcat geoserver_reset
 
 build_geoserver:
 	@mvn \
@@ -40,5 +40,3 @@ geoserver_version_checkout:
 mvn_cache_reset:
 	@rm -rf ${HOME}/.m2/repository
 
-push_ecr:
-	@echo docker-compose push $(SERVICE_NAME)
